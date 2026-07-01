@@ -107,6 +107,6 @@ export class EngramClient {
   }
 
   async stats(): Promise<MemoryStats> {
-    return request<MemoryStats>(this.http, { method: 'GET', path: '/v1/memories/stats' });
+    return request<MemoryStats>(this.http, { method: 'GET', path: '/v1/stats' });
   }
 }
