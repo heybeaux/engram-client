@@ -111,6 +111,7 @@ describe('EngramClient', () => {
     const s = { total: 100, byLayer: {}, bySource: {}, fogIndex: 0.1, growthRate: 0.5 };
     mockFetch.mockReturnValue(ok(s));
     expect(await client.stats()).toEqual(s);
+    expect(mockFetch.mock.calls[0][0]).toContain('/v1/stats');
   });
 
   // Webhooks
