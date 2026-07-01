@@ -1,10 +1,13 @@
 {
-  "name": "@openengram/client",
+  "name": "@openengram/mcp",
   "version": "0.1.0",
-  "description": "Lightweight TypeScript client for the Engram API",
+  "description": "MCP server for Engram — gives AI assistants remember/recall/forget tools over the Engram API",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "engram-mcp": "./dist/cli.js"
+  },
   "exports": {
     ".": {
       "import": {
@@ -17,24 +20,25 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "build": "tsup",
-    "test": "jest",
+    "dev": "node dist/cli.js",
     "lint": "tsc --noEmit"
   },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@openengram/client": "^0.1.0"
+  },
   "devDependencies": {
-    "@types/jest": "^29.5.0",
     "@types/node": "^20.0.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.0",
     "tsup": "^8.0.0",
     "typescript": "^5.4.0"
   },
-  "keywords": ["engram", "openengram", "memory", "agent", "ai", "sdk"],
+  "keywords": ["engram", "openengram", "mcp", "memory", "agent", "ai", "model-context-protocol"],
   "license": "MIT",
   "publishConfig": {
     "access": "public"
