@@ -1,21 +1,21 @@
-# @engram/client
+# @openengram/client
 
-Lightweight TypeScript client for the [Engram](https://github.com/openclawai/engram) memory API. Zero dependencies, uses native `fetch` (Node 18+).
+Lightweight TypeScript client for the [Engram](https://github.com/heybeaux/engram) memory API. Zero dependencies, uses native `fetch` (Node 18+).
 
 ## Install
 
 ```bash
-npm install @engram/client
+npm install @openengram/client
 ```
 
 ## Quick Start
 
 ```typescript
-import { EngramClient } from '@engram/client';
+import { EngramClient } from '@openengram/client';
 
 const engram = new EngramClient({
   baseUrl: 'http://localhost:3001',
-  apiKey: 'engram_xxx',
+  apiKey: '<api-key-from-register-response>',
   userId: 'my-agent',
 });
 
@@ -104,7 +104,7 @@ await engram.webhooks.deliveries(id);
 ## Error Handling
 
 ```typescript
-import { AuthError, NotFoundError, TimeoutError, EngramError } from '@engram/client';
+import { AuthError, NotFoundError, TimeoutError, EngramError } from '@openengram/client';
 
 try {
   await engram.get('nonexistent');

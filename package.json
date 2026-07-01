@@ -1,23 +1,25 @@
 {
-  "name": "@engram/client",
+  "name": "@openengram/client",
   "version": "0.1.0",
-  "description": "Lightweight TypeScript client for the Engram API",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "description": "Lightweight TypeScript client for the OpenEngram memory API",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=18"
   },
@@ -34,6 +36,24 @@
     "tsup": "^8.0.0",
     "typescript": "^5.4.0"
   },
-  "keywords": ["engram", "memory", "agent", "ai", "sdk"],
-  "license": "MIT"
+  "keywords": [
+    "engram",
+    "memory",
+    "agent",
+    "ai",
+    "sdk",
+    "openengram"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heybeaux/engram-client.git"
+  },
+  "homepage": "https://github.com/heybeaux/engram-client#readme",
+  "bugs": {
+    "url": "https://github.com/heybeaux/engram-client/issues"
+  }
 }
